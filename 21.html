@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <title>Interaction: Droppable</title>
+
+      <style>
+          #item{
+              width:100px;
+              height:100px;
+              border:1px solid black
+              margin:5px;
+              padding: 5px;
+              background: purple;
+
+          }
+          #parent
+          {
+              width: 500px;
+              height: 500px;
+              border: 5px solid black;
+          }
+
+       #child
+          {
+            width: 200px;
+            height: 200px;
+            border: 5px solid black;
+            margin: auto;
+            margin-top: 50%;
+            transform: translateY(-50%);
+
+          }
+    </style>
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+      $("#item").draggable();
+          $("#parent, #child").droppable({greedy:true, drop:function(){
+              alert("The item is dropped in " + $(this).attr("id"));}});
+
+          });
+      </script>
+</head>
+
+<body>
+
+<div id="item"></div>
+<div id="parent"><div id="child"></div></div>
+</body>
+</html>
